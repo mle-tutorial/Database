@@ -5,9 +5,6 @@ from datetime import date, timedelta
 
 import pandas as pd
 import yfinance as yf
-from sqlalchemy import create_engine
-
-from settings import Settings
 
 def extract_data(
         start_date:str = str(date.today() - timedelta(days=365 * 1)),
@@ -33,9 +30,6 @@ def extract_data(
     return df
 
 if __name__ == "__main__":
-    TABLE_NAME = "stock_ohlcv"
     df = extract_data()
-
-    engine = create_engine(Settings.POSTGRES_HOST)
-
-    df.to_sql(TABLE_NAME, con=engine, if_exists="append", index=False)
+    
+    df.to_csv("yfinance.csv", index=False)
