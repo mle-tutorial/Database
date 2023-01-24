@@ -7,5 +7,4 @@
 
 ## Data Download & Data Load
 
-- `python main.py` 명령어로 yfinance데이터를 다운로드 받습니다.
-- `python main.py` 명령어로 다운받은 데이터를 Database에 insert합니다.
+- `python main.py` 명령어로 yfinance데이터를 다운로드 받고 Database에 insert합니다.
