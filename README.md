@@ -8,4 +8,6 @@
 
 ## 실습
 
-- [Lab1](Lab1/README.md) : PostgreSQL에서 SQL 사용하기
+
+- [Lab1](Lab1/README.md) : Python으로 Data Insert 진행하기
+- [Lab2](Lab2/README.md) : PostgreSQL에서 SQL 사용하기
