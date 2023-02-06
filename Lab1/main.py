@@ -12,9 +12,11 @@ def extract_data(
     ticker: str = "005930",
 ):
 
+    # Download Data
     df = stock.get_market_ohlcv_by_date(start_date, end_date, ticker)
-    df["Ticker"] = ticker
 
+    # Preprocessing Data
+    df["Ticker"] = ticker
     df = df.reset_index()
     df.columns = Settings.COLUMNS
 
@@ -23,8 +25,10 @@ def extract_data(
 
 if __name__ == "__main__":
     TABLE_NAME = "stock"
+
+    # Extract Data
     df = extract_data()
 
+    # Insert Data
     engine = create_engine(Settings.POSTGRES_HOST)
-
     df.to_sql(TABLE_NAME, con=engine, if_exists="append", index=False)
