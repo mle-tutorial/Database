@@ -2,7 +2,6 @@
 
 ## 환경
 
-- `bash install_docker.sh`를 통해 도커를 설치합니다.
 - Miniconda 가상환경
 - `pip install -r requirements.txt`
 
