@@ -7,4 +7,4 @@
 
 ## Data Download & Data Load
 
-- `python main.py` 명령어로 yfinance데이터를 다운로드 받고 Database에 insert합니다.
+- `python main.py` 명령어로 Pykrx에서 삼성전자 데이터를 다운로드 받고 Database에 insert합니다.

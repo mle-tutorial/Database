@@ -2,7 +2,7 @@
 
 ## Data Download
 
-- `python main.py` 명령어로 yfinance데이터를 다운로드 받습니다.
+- `python main.py` 명령어로 삼성전자 OHLCV데이터를 다운로드 받습니다.
 
 ## Data Load
 

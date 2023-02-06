@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Load Data
-
-docker cp yfinance.csv postgresql:/
+docker cp stock.csv postgresql:/
 
 docker exec -it postgresql \
 psql -U postgres \
@@ -12,19 +10,20 @@ docker exec -it postgresql \
 psql \
 -U postgres \
 -d stock \
--c "CREATE TABLE stock_ohlcv (
-    STOCK_DATE DATE NULL,
-    Open FLOAT NULL,
-    High FLOAT NULL,
-    Low FLOAT NULL,
-    Close FLOAT NULL,
-    AdjClose FLOAT NULL,
-    Volume BIGINT NULL,
-    Company_name VARCHAR(20) NULL
+-c "CREATE TABLE stock (
+    Date DATE NULL,
+    Open INT NULL,
+    High INT NULL,
+    Low INT NULL,
+    Close INT NULL,
+    Volume INT NULL,
+    Value BIGINT NULL,
+    Change FLOAT NULL,
+    Ticker FLOAT NULL
  )"
  
 docker exec -it postgresql\
  psql \
  -U postgres \
  -d stock \
- -c "COPY stock_ohlcv FROM '/yfinance.csv' WITH (FORMAT csv, header)"
+ -c "COPY stock FROM '/stock.csv' WITH (FORMAT csv, header)"
